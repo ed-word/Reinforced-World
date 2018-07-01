@@ -95,11 +95,8 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
 
     private void stopSensor() {
         sm.unregisterListener(this);
-        Button t=(Button)findViewById(R.id.output);
-        t.setText("No Accident");
-        t.setBackgroundResource(android.R.drawable.btn_default);
-
     }
+
     public float getCpuTemp() {
         Process p;
         try {
@@ -130,17 +127,17 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
         TextView acceleration = (TextView) findViewById(R.id.acceleration);
         double x=capturedAcceleration.getX(),y=capturedAcceleration.getY(),z=capturedAcceleration.getZ();
         long ti=capturedAcceleration.getTimestamp();
-        acceleration.setText("X:" + x +
-                " m/s^2\nY:" + y +
-                " m/s^2\nZ:" + z +
-                " m/s^2\nTimestamp:" + ti);
+        acceleration.setText("X : " + x +
+                " m/s^2\nY : " + y +
+                " m/s^2\nZ : " + z +
+                " m/s^2\nTimestamp : " + ti);
         if(Math.sqrt(x*x+y*y+z*z)>30){
             Button t=(Button) findViewById(R.id.output);
             double p= Math.sqrt(x*x+y*y+z*z);
             if(p>m1) {
                 //t.setText(Double.toString(p));
-                t.setText("Accident");
-                t.setBackgroundColor(Color.RED);
+                t.setVisibility(View.VISIBLE);
+                t.setClickable(false);
                 m1=p;
             }
             if(r==null){

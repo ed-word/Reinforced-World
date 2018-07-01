@@ -21,15 +21,19 @@
             android:layout_gravity="center"
             android:layout_marginBottom="60dp"
             android:gravity="center_vertical"
-            android:text="Welcome"
+            android:text="DEMO"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
+            style="@style/Widget.AppCompat.Button.Colored"
             android:id="@+id/button_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Acceleration" />
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:text="Acceleration"/>
+
 
 
     </LinearLayout>

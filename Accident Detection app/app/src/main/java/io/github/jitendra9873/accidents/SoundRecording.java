@@ -250,6 +250,6 @@ public class SoundRecording{
     }
     void stop(){
         stopRecording();
-        Toast.makeText(mContext, "Audio Recorder successfully", Toast.LENGTH_LONG).show();
+        Toast.makeText(mContext, "Audio Recorded successfully", Toast.LENGTH_LONG).show();
     }
 }
