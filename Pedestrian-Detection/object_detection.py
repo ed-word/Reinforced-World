@@ -136,7 +136,7 @@ PATH_TO_TEST_IMAGES_DIR = '/home/edward/Workspace/Angel/Pedestrian-Detection/Dat
 TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, i) for i in os.listdir(PATH_TO_TEST_IMAGES_DIR) ]
 
 # Size, in inches, of the output images.
-IMAGE_SIZE = (96, 64)
+IMAGE_SIZE = (128, 96)
 
 
 # In[35]:
@@ -190,7 +190,7 @@ def run_inference_for_single_image(image, graph):
 
 
 # In[ ]:
-
+count = 0
 for image_path in TEST_IMAGE_PATHS:
 	category_count = {
 						'person':0, 
@@ -216,17 +216,19 @@ for image_path in TEST_IMAGE_PATHS:
 		else:
 			category_count[category_index[c]["name"]] += 1
 	# Visualization of the results of a detection.
-	# vis_util.visualize_boxes_and_labels_on_image_array(
-	#     image_np,
-	#     output_dict['detection_boxes'],
-	#     output_dict['detection_classes'],
-	#     output_dict['detection_scores'],
-	#     category_index,
-	#     instance_masks=output_dict.get('detection_masks'),
-	#     use_normalized_coordinates=True,
-	#     line_thickness=8)
-	# plt.figure(figsize=IMAGE_SIZE)
-	# plt.imshow(image_np)
+	vis_util.visualize_boxes_and_labels_on_image_array(
+	    image_np,
+	    output_dict['detection_boxes'],
+	    output_dict['detection_classes'],
+	    output_dict['detection_scores'],
+	    category_index,
+	    instance_masks=output_dict.get('detection_masks'),
+	    use_normalized_coordinates=True,
+	    line_thickness=8)
+	plt.figure(figsize=IMAGE_SIZE)
+	plt.imshow(image_np)
+	plt.savefig('Output-Images/im' + str(count) + '.png')
+	count += 1
 	for i in category_count:
 		print("Number of ", i, ": ", category_count[i])
 	print()
