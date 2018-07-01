@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link href="{% static 'css/video.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-content">
+        <div class="page-header">
+            <div class="container-fluid">
+                <h2 class="h5 no-margin-bottom">Video Flow</h2>
+            </div>
+        </div>
+        <section class="no-padding-top no-padding-bottom">
+            <div class="container-fluid">
+                <form id="upload_video">
+                    {% csrf_token %}
+                    <input type="file" name="myFile" enctype="multipart/form-data">
+                    <input type="submit" class="btn btn-primary" >
+                </form>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="video-preview-1">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div id="crash-text" class="col-md-12">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="no-padding-bottom">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="video-preview-2">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div id="crash-text" class="col-md-12">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="no-padding-bottom">
+            <div class="container-fluid">
+                <div class="row">
+                </div>
+            </div>
+        </section>
+
+        <section class="no-padding-bottom">
+            <div class="container-fluid">
+                <div class="row">
+                </div>
+            </div>
+
+        </section>
+        
+        <footer class="footer">
+            <div class="footer__block block no-margin-bottom">
+                <div class="container-fluid text-center">
+                    <!-- Please do not remove the backlink to us unless you support us at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+                    <p class="no-margin-bottom">2018 &copy; Your company. Design by
+                        <a href="https://bootstrapious.com">Bootstrapious</a>.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/video.js' %}"></script>
+<script src="{% static 'vendor/popper.js/umd/popper.min.js' %}"></script>
+<script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+<script src="{% static 'vendor/jquery-validation/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/charts-home.js' %}"></script>
+<script src="{% static 'js/front.js' %}"></script>
+{% endblock %}
