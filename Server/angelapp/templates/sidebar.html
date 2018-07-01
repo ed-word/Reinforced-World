@@ -2,34 +2,36 @@
 <nav id="sidebar">
     <!-- Sidebar Header-->
     <div class="sidebar-header d-flex align-items-center">
-        <div class="avatar">
-            <img src="img/avatar-6.jpg" alt="..." class="img-fluid rounded-circle">
-        </div>
-        <div class="title">
-            <h1 class="h5">Mark Stephen</h1>
-            <p>Web Designer</p>
-        </div>
+        
     </div>
     <!-- Sidebar Navidation Menus-->
-    <span class="heading">Main</span>
+    <span class="heading">Menu</span>
     <ul class="list-unstyled">
-        <li class="active">
-            <a href="index.html">
-                <i class="icon-home"></i>Home </a>
-        </li>
+        {% if active == 'home' %}
+        <li  class="active">
+        {% else %}
         <li>
-            <a href="tables.html">
-                <i class="icon-grid"></i>Tables </a>
+        {% endif %}
+            <a href="/">
+                <i class="icon-home"></i> Reinforcement </a>
         </li>
-        <li>
-            <a href="charts.html">
-                <i class="fa fa-bar-chart"></i>Charts </a>
+        {% if active == 'video' %}
+            <li class="active">
+        {% else %}
+            <li>
+        {% endif %}
+            <a href="/video">
+                <i class="fa fa-video-camera"></i> Video Detection </a>
         </li>
-        <li>
-            <a href="forms.html">
-                <i class="icon-padnote"></i>Forms </a>
+        {% if active == 'image' %}
+            <li class="active">
+        {% else %}
+            <li>
+        {% endif %}
+            <a href="/image" >
+                <i class="fa fa-image "></i> Image Detection </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse">
                 <i class="icon-windows"></i>Example dropdown </a>
             <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
@@ -43,26 +45,8 @@
                     <a href="#">Page</a>
                 </li>
             </ul>
-        </li>
-        <li>
-            <a href="login.html">
-                <i class="icon-logout"></i>Login page </a>
-        </li>
-    </ul>
-    <span class="heading">Extras</span>
-    <ul class="list-unstyled">
-        <li>
-            <a href="#">
-                <i class="icon-settings"></i>Demo </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="icon-writing-whiteboard"></i>Demo </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="icon-chart"></i>Demo </a>
-        </li>
+        </li> -->
+        
     </ul>
 </nav>
 <!-- Sidebar Navigation end-->

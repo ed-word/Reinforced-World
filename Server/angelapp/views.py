@@ -55,3 +55,15 @@ def check_fire(req):
 
 def check_damage(req):
     return JsonResponse({'result': True})
+
+def image_home(req):
+    return render(req, 'image.html', {})
+
+def check_image_crash(req):
+    img = req.FILES['myFile']
+    with open(os.path.join(settings.MEDIA_ROOT, 'image-train', f.name), 'wb+') as f:
+        for chunk in img.chunks():
+            f.write(chunk)
+
+    url = '/media/image-train/{}'.format(f.name)
+    return JsonResponse({'result': True, })
