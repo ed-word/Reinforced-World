@@ -8,7 +8,7 @@ Steps:
 - python3 Server/manage.py runserver
 ---
 
-![](Images/flow.jpg)
+![](Images/Reinforced support.png)
 
 ---
  
