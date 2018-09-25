@@ -4,6 +4,8 @@ A reinforcement based emergency response system that optimises lives saved and t
 
 ---
 Steps:
+- sudo apt update
+- sudo apt install ffmpeg
 - pip3 install -r requirements.txt
 - python3 Server/manage.py runserver
 ---
